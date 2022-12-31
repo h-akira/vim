@@ -46,6 +46,10 @@ Plug 'Shougo/ddc-ui-native'
 Plug 'Shougo/ddc-source-around'
 Plug 'Shougo/ddc-matcher_head'
 Plug 'Shougo/ddc-sorter_rank'
+Plug 'LumaKernel/ddc-file'
+Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/vim-lsp'
+Plug 'shun/ddc-vim-lsp'
 call plug#end()
 
 " コメントアウト
@@ -80,22 +84,51 @@ call ddc#custom#patch_global('ui', 'native')
 
 " Use around source.
 " https://github.com/Shougo/ddc-source-around
-call ddc#custom#patch_global('sources', ['around'])
+" call ddc#custom#patch_global('sources', ['around'])
 
 " Use matcher_head and sorter_rank.
 " https://github.com/Shougo/ddc-matcher_head
 " https://github.com/Shougo/ddc-sorter_rank
-call ddc#custom#patch_global('sourceOptions', #{
-      \ _: #{
-      \   matchers: ['matcher_head'],
-      \   sorters: ['sorter_rank']},
-      \ })
+" call ddc#custom#patch_global('sourceOptions', #{
+"       \ _: #{
+"       \   matchers: ['matcher_head'],
+"       \   sorters: ['sorter_rank']},
+"       \ })
 
 call ddc#custom#patch_global('sourceParams', #{
       \   around: #{ maxSize: 500 },
       \ })
-
 " Mappings
+
+" https://github.com/LumaKernel/ddc-source-fileより
+call ddc#custom#patch_global('sources', ['file', 'around', 'vim-lsp'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']
+      \},
+      \ 'file': {
+      \   'mark': 'F',
+      \   'isVolatile': v:true,
+      \   'forceCompletionPattern': '\S/\S*',
+      \ },
+      \ 'vim-lsp': {
+      \   'mark': 'lsp', 
+      \   'matchers': ['matcher_head'],
+      \ }
+      \})
+call ddc#custom#patch_filetype(
+    \ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
+      \ 'sourceOptions': {
+      \   'file': {
+      \     'forceCompletionPattern': '\S\\\S*',
+    \   },
+    \ },
+    \ 'sourceParams': {
+      \   'file': {
+      \     'mode': 'win32',
+    \   },
+    \ }})
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
@@ -109,4 +142,3 @@ inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 " Use ddc.
 call ddc#enable()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-

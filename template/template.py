@@ -13,8 +13,8 @@ def main():
   parser.add_argument("-l", "--little", action="store_true", help="little endian")
   parser.add_argument("file", metavar="input-file", help="input file")
   options = parser.parse_args()
-  ## options, args = parser.parse_known_args()
-  ## options.config = args
+  # options, args = parser.parse_known_args()
+  # options.config = args
   
   # Import
   import sys

@@ -6,14 +6,13 @@ set fileformats=unix,dos,mac
 " 基本
 set number
 set autoread
-set cursorline
-" set cursorcolumn
 set virtualedit=onemore
-" set showmatch
+set showmatch
 
 "検索
 set hlsearch
 set incsearch
+set ignorecase
 set smartcase
 
 "インデント
@@ -39,14 +38,11 @@ Plug 'Yggdroot/indentLine'
 Plug 'thinca/vim-template'
 Plug 'tomtom/tcomment_vim'
 Plug 'cohama/lexima.vim'
+Plug 'vim-airline/vim-airline'
 " カラースキーム
-Plug 'Shougo/unite.vim'
-Plug 'ujihisa/unite-colorscheme'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'tomasr/molokai'
 Plug 'gosukiwi/vim-atom-dark'
-Plug 'jacoborus/tender.vim'
-Plug 'vim-airline/vim-airline'
 " 補完
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
@@ -63,12 +59,17 @@ call plug#end()
 " コメントアウト
 let g:tcomment_opleader1 = 'fc'
 setlocal formatoptions-=ro
+
 " カラースキーム
-"colorscheme lucius
-colorscheme molokai
-"colorscheme atom-dark 
-"set background=dark
-"let g:ligthline = { 'colorscheme': 'lucius' }
+" colorscheme lucius
+" set background=dark
+" let g:ligthline = { 'colorscheme': 'lucius' }
+" colorscheme molokai
+colorscheme atom-dark-256
+set cursorline
+" set cursorcolumn
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()
@@ -83,7 +84,8 @@ autocmd User plugin-template-loaded
 " 補完 """""""""""""""""""""""""""""""""""""""""""""""""
 let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
-let g:lsp_log_file = ""
+" let g:lsp_diagnostics_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
 " let g:lsp_completion_documentation_delay = 1000
 " let g:lsp_diagnostics_highlights_delay = 1000
 " let g:lsp_diagnostics_signs_delay = 1000
@@ -92,6 +94,7 @@ let g:lsp_log_file = ""
 " let g:lsp_inlay_hints_delay = 1000
 " let g:lsp_document_highlight_delay = 1000
 " let g:lsp_signature_help_delay = 3000
+let g:lsp_log_file = ""
 
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sourceParams', #{

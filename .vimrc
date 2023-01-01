@@ -54,6 +54,10 @@ Plug 'LumaKernel/ddc-file'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'shun/ddc-source-vim-lsp'
+" 追加
+if filereadable(expand('~/.vim/add.plugin.vimrc'))
+  source ~/.vim/add.plugin.vimrc
+endif
 call plug#end()
 
 " コメントアウト
@@ -145,3 +149,6 @@ call ddc#enable()
 " https://github.com/Shougo/ddc.vim
 " https://github.com/LumaKernel/ddc-source-file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand('~/.vim/add.vimrc'))
+  source ~/.vim/add.vimrc
+endif

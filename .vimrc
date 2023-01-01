@@ -96,7 +96,7 @@ let g:lsp_document_code_action_signs_enabled = 0
 " let g:lsp_diagnostics_virtual_text_delay = 1000
 " let g:lsp_document_code_action_signs_delay = 1000
 " let g:lsp_inlay_hints_delay = 1000
-" let g:lsp_document_highlight_delay = 1000
+let g:lsp_document_highlight_delay = 0
 " let g:lsp_signature_help_delay = 3000
 let g:lsp_log_file = ""
 

@@ -1,0 +1,3 @@
+[submodule "vim-add"]
+	path = vim-add
+	url = git@github.com:h-akira/vim-add.git

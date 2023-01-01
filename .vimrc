@@ -66,10 +66,10 @@ setlocal formatoptions-=ro
 " let g:ligthline = { 'colorscheme': 'lucius' }
 " colorscheme molokai
 colorscheme atom-dark-256
-set cursorline
+" set cursorline
 " set cursorcolumn
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
-highlight CursorLine gui=underline guifg=NONE guibg=NONE
+" highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()

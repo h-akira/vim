@@ -149,6 +149,8 @@ call ddc#enable()
 " https://github.com/Shougo/ddc.vim
 " https://github.com/LumaKernel/ddc-source-file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 追加
 if filereadable(expand('~/.vim/add.vimrc'))
   source ~/.vim/add.vimrc
 endif

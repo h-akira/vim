@@ -12,7 +12,7 @@ def parse_args():
   import argparse
   parser = argparse.ArgumentParser(description="""\
 <+CURSOR+>
-""")
+""", formatter_class = argparse.ArgumentDefaultsHelpFormatter)
   parser.add_argument("--version", action="version", version='%(prog)s 0.0.1')
   parser.add_argument("-o", "--output", metavar="output-file", default="output", help="output file")
   parser.add_argument("-l", "--little", action="store_true", help="little endian")

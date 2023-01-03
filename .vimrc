@@ -78,7 +78,7 @@ colorscheme atom-dark-256
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()
 function! s:template_keywords()
-	%s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+	%s/<+DATE+>/\=strftime('%Y-%m-%d %H:%M:%S')/g
 endfunction
 autocmd User plugin-template-loaded
 \    if search('<+CURSOR+>')

@@ -3,7 +3,7 @@
 #
 # Created: <+DATE+>
 
-def main():
+def parse_args():
   import argparse
   parser = argparse.ArgumentParser(description="""\
 <+CURSOR+>
@@ -13,9 +13,9 @@ def main():
   parser.add_argument("-l", "--little", action="store_true", help="little endian")
   parser.add_argument("file", metavar="input-file", help="input file")
   options = parser.parse_args()
-  # options, args = parser.parse_known_args()
-  # options.config = args
-  
+  return options
+
+def main(options):
   # Import
   import sys
   import os
@@ -30,4 +30,5 @@ def main():
 
 
 if(__name__ == '__main__'):
-  main()
+  options = parse_args
+  main(options)

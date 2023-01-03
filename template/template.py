@@ -30,5 +30,5 @@ def main(options):
 
 
 if(__name__ == '__main__'):
-  options = parse_args
+  options = parse_args()
   main(options)

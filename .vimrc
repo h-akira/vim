@@ -32,6 +32,9 @@ augroup vimrcEx
     \ endif
 augroup END
 
+" Mac向け
+set backspace=indent,eol,start
+
 "プラグイン
 call plug#begin()
 Plug 'Yggdroot/indentLine'
@@ -86,6 +89,8 @@ autocmd User plugin-template-loaded
 \  | endif
 
 " 補完 """""""""""""""""""""""""""""""""""""""""""""""""
+" let g:denops_disable_version_check = 1
+
 let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
 let g:lsp_diagnostics_enabled = 0

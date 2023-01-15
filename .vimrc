@@ -1,7 +1,7 @@
 " 文字コード
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
+" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" set fileformats=unix,dos,mac
 
 " 基本
 set number
@@ -81,7 +81,7 @@ colorscheme atom-dark-256
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()
 function! s:template_keywords()
-	%s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+	%s/<+DATE+>/\=strftime('%Y-%m-%d %H:%M:%S')/g
 endfunction
 autocmd User plugin-template-loaded
 \    if search('<+CURSOR+>')
@@ -154,6 +154,8 @@ call ddc#enable()
 " https://github.com/Shougo/ddc.vim
 " https://github.com/LumaKernel/ddc-source-file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" 追加
 if filereadable(expand('~/.vim/add.vimrc'))
   source ~/.vim/add.vimrc
 endif

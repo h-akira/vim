@@ -19,4 +19,12 @@ vim +PlugInstall +qall
 ```
 初回は順番の関係で二回必要．
 
+デフォルトのvimだと非対応な場合があるので対応する．
+```
+# Ubuntu
+sudo apt install vim-gtk
+# Mac
+brew install vim
+```
+
 

@@ -9,6 +9,9 @@ set autoread
 set virtualedit=onemore
 set showmatch
 
+" クリップボード
+set clipboard=unnamedplus
+
 "検索
 set hlsearch
 set incsearch

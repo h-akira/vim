@@ -10,7 +10,7 @@ set virtualedit=onemore
 set showmatch
 
 " クリップボード
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 "検索
 set hlsearch

@@ -2,7 +2,7 @@
 ```
 cd
 git clone git@github.com:h-akira/vim.git .vim
-ln -sf .vim/.vimrc .vimrc
+ln -sf .vim/dot.vimrc .vimrc
 ```
 denoをインストールする（
 [参考](https://yoshixmk.github.io/deno-manual-ja/getting_started/installation.html)

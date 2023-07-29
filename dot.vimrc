@@ -1,7 +1,5 @@
 " 文字コード
 set encoding=utf-8
-" set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-" set fileformats=unix,dos,mac
 
 " 基本
 set number
@@ -61,8 +59,14 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'shun/ddc-source-vim-lsp'
 " 追加
-if filereadable(expand('~/.vim/add.plugin.vimrc'))
-  source ~/.vim/add.plugin.vimrc
+if has('nvim')
+  if filereadable(expand('~/.config/nvim/add.plugin.vimrc'))
+    source ~/.config/nvim/add.plugin.vimrc
+  endif
+else
+  if filereadable(expand('~/.vim/add.plugin.vimrc'))
+    source ~/.vim/add.plugin.vimrc
+  endif
 endif
 call plug#end()
 
@@ -72,14 +76,15 @@ setlocal formatoptions-=ro
 
 " カラースキーム
 " colorscheme lucius
-" set background=dark
-" let g:ligthline = { 'colorscheme': 'lucius' }
 " colorscheme molokai
 colorscheme atom-dark-256
+
+"カーソル
 " set cursorline
 " set cursorcolumn
 " highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 " highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
 
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()
@@ -91,21 +96,13 @@ autocmd User plugin-template-loaded
 \  |   execute 'normal! "_da>'
 \  | endif
 
-" 補完 """""""""""""""""""""""""""""""""""""""""""""""""
-" let g:denops_disable_version_check = 1
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 補完
 let g:lsp_diagnostics_signs_enabled = 0
 let g:lsp_diagnostics_highlights_enabled = 0
 let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
-" let g:lsp_completion_documentation_delay = 1000
-" let g:lsp_diagnostics_highlights_delay = 1000
-" let g:lsp_diagnostics_signs_delay = 1000
-" let g:lsp_diagnostics_virtual_text_delay = 1000
-" let g:lsp_document_code_action_signs_delay = 1000
-" let g:lsp_inlay_hints_delay = 1000
 let g:lsp_document_highlight_delay = 0
-" let g:lsp_signature_help_delay = 3000
 let g:lsp_log_file = ""
 
 call ddc#custom#patch_global('ui', 'native')
@@ -159,6 +156,12 @@ call ddc#enable()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 追加
-if filereadable(expand('~/.vim/add.vimrc'))
-  source ~/.vim/add.vimrc
+if has('nvim')
+  if filereadable(expand('~/.config/nvim/add.vimrc'))
+    source ~/.config/nvim/add.vimrc
+  endif
+else
+  if filereadable(expand('~/.vim/add.vimrc'))
+    source ~/.vim/add.vimrc
+  endif
 endif

@@ -1,35 +1,54 @@
 # 導入
+vimの場合
 ```
 cd
 git clone git@github.com:h-akira/vim.git .vim
 ln -sf .vim/dot.vimrc .vimrc
 ```
-denoをインストールする（
-[参考](https://yoshixmk.github.io/deno-manual-ja/getting_started/installation.html)
-）．
+neovimの場合
+```
+cd ~/.config
+git clone git@github.com:h-akira/vim.git nvim
+cd nvim
+ln -sf dot.vimrc init.vim
+```
+
+## deno
+[こちらを参照](https://yoshixmk.github.io/deno-manual-ja/getting_started/installation.html)
 ```
 # Unix
 curl -fsSL https://deno.land/x/install/install.sh | sh
 # Mac
 brew install deno
 ```
-指示に従ってパスを通す．その後，反映する．
+指示に従ってパスを通す．
+
+## プラグイン
 ```
+# vim
 vim +PlugInstall +qall
+# neovim
+nvim +PlugInstall +qall
 ```
 初回は順番の関係で二回必要．
 
-デフォルトのvimだと非対応な場合があるので対応する．
+## その他
+デフォルトのvimだと非対応な場合があるので対応しているvimを入れる．
 ```
 # Ubuntu
 sudo apt install vim-gtk
 # Mac
 brew install vim
 ```
-Ubuntuで最新のvimが入らない場合:
+Ubuntuで最新のバージョンが入らない場合は以下のように追加する．
 ```
+# vim
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
 sudo apt install vim
+# neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt update
+sudo apt install neovim
 ```
 

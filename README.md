@@ -33,14 +33,21 @@ nvim +PlugInstall +qall
 初回は順番の関係で二回必要．
 
 ## その他
-デフォルトのvimだと非対応な場合があるので対応しているvimを入れる．
+- デフォルトのvimだと非対応な場合があるので対応しているvimを入れる．
 ```
 # Ubuntu
 sudo apt install vim-gtk
 # Mac
 brew install vim
 ```
-Ubuntuで最新のバージョンが入らない場合は以下のように追加する．
+- `vi`，`vim`コマンドで起動されるものを指定する場合は以下のコマンドの後に選択肢から選ぶ．
+```
+# vi
+sudo update-alternatives --config vi
+# vim
+sudo update-alternatives --config vim
+```
+- Ubuntuで`apt`コマンドを利用した時に最新のバージョンが入らない場合は以下のように追加する．
 ```
 # vim
 sudo add-apt-repository ppa:jonathonf/vim
@@ -51,4 +58,3 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
 ```
-

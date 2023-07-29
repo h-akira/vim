@@ -59,3 +59,5 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
 ```
+# リンク
+- https://github.com/h-akira/vim-add

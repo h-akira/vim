@@ -26,5 +26,10 @@ sudo apt install vim-gtk
 # Mac
 brew install vim
 ```
-
+Ubuntuで最新のvimが入らない場合:
+```
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+```
 

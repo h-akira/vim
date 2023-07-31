@@ -47,6 +47,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'tomasr/molokai'
 Plug 'gosukiwi/vim-atom-dark'
+" ファイルブラウザ
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " 補完
 Plug 'Shougo/ddc.vim'
 Plug 'vim-denops/denops.vim'
@@ -85,6 +88,11 @@ colorscheme atom-dark-256
 " highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 " highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
+" ファイルブラウザ
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " テンプレート
 autocmd User plugin-template-loaded call s:template_keywords()

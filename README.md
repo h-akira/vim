@@ -59,5 +59,10 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 sudo apt install neovim
 ```
+`LspInstallServer`でLspがインストールされるが，pythonのLspをインストールする場合は`pytyon3-venv`が必要:
+```
+# Ubuntu
+sudo apt install python3-venv
+```
 # リンク
 - https://github.com/h-akira/vim-add

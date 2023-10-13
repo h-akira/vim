@@ -61,6 +61,7 @@ Plug 'LumaKernel/ddc-file'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'shun/ddc-source-vim-lsp'
+Plug 'github/copilot.vim'
 " 追加
 if has('nvim')
   if filereadable(expand('~/.config/nvim/add.plugin.vimrc'))

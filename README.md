@@ -32,7 +32,14 @@ vim +PlugInstall +qall
 nvim +PlugInstall +qall
 ```
 初回は順番の関係で二回必要．
-
+## Github Copilot
+Github Copilotを利用する場合は`Node.js`をインストールする必要がある．
+また，初回利用時に以下を実行して認証する．
+```
+:Copilot setup
+```
+参考
+- https://github.com/github/copilot.vim
 ## その他
 - デフォルトのvimだと非対応な場合があるので対応しているvimを入れる．
 ```

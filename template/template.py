@@ -5,7 +5,6 @@
 
 import sys
 import os
-import numpy
 
 def parse_args():
   import argparse

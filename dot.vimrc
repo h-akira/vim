@@ -113,6 +113,7 @@ let g:lsp_diagnostics_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0
 let g:lsp_document_highlight_delay = 0
 let g:lsp_log_file = ""
+let g:lsp_auto_enable = 0
 
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sourceParams', #{
